@@ -1,12 +1,11 @@
 package com.rms.ResourceManagementAPI.service;
 
-import com.rms.ResourceManagementAPI.dao.EmployeeRepository;
+import com.rms.ResourceManagementAPI.repository.EmployeeRepository;
 import com.rms.ResourceManagementAPI.model.AvgPriority;
 import com.rms.ResourceManagementAPI.model.Dashboard_Data;
 import com.rms.ResourceManagementAPI.dao.EmployeeDataInterface;
 import com.rms.ResourceManagementAPI.model.EmployeeData;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
