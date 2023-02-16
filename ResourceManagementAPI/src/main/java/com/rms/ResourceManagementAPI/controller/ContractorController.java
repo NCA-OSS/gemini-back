@@ -21,7 +21,7 @@ public class ContractorController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    @PutMapping
     public String add(@RequestBody Contractor contractor){
         //Check if there's existing user with given user_id
         //if no, throw bad request
@@ -53,14 +53,6 @@ public class ContractorController {
     @GetMapping("/{contractorUUID}")
     public ResponseEntity<Object> getSpecificContractor(@PathVariable("contractorUUID") UUID contractorUUID) {
         return ResponseHandler.responseBuilder("Requested Specific Contractor",
-                HttpStatus.OK,
-                contractorService.getSpecificContractor(contractorUUID));
-    }
-
-    @DeleteMapping("/{contractorUUID}")
-    public ResponseEntity<Object> deleteContractor(@PathVariable("contractorUUID") UUID contractorUUID) {
-        // Access the DB and delete the contractor
-        return ResponseHandler.responseBuilder("Deleted Specific Contractor",
                 HttpStatus.OK,
                 contractorService.getSpecificContractor(contractorUUID));
     }

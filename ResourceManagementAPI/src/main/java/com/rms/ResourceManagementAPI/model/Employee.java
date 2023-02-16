@@ -1,9 +1,7 @@
-package com.rms.ResourceManagementAPI.entity;
+package com.rms.ResourceManagementAPI.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.rms.ResourceManagementAPI.model.AvgPriority;
-import com.rms.ResourceManagementAPI.model.EmployeeData;
 import lombok.*;
 import org.hibernate.annotations.Type;
 
