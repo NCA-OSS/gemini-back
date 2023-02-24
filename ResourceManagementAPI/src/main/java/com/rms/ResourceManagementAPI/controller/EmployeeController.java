@@ -35,13 +35,13 @@ public class EmployeeController {
     @CrossOrigin
     @PostMapping("/saveEmployee")
     public String saveEmployee(@RequestBody Employee employee){
-        if(userService.existsUserByUserId(employee.getId())){
+//        if(userService.existsUserByUserId(employee.getId())){
             employeeService.saveEmployee(employee);
             return "New employee added";
-        }
-        else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND).toString();
-        }
+//        }
+//        else{
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND).toString();
+//        }
     }
 
     @CrossOrigin
