@@ -20,10 +20,10 @@ public class UserController {
     private UserService userService;
 
 
-    @PutMapping
+    @PostMapping
     public String add(@RequestBody User user){
         userService.saveUser(user);
-        return "New user added through HTTP PUT method";
+        return "New user added through HTTP POST method";
     }
 
     @GetMapping("/getAll")
@@ -47,6 +47,14 @@ public class UserController {
             return ResponseHandler.responseBuilder("Request user ID not found",
                     HttpStatus.NOT_FOUND,"User id: "+userUUID+" cannot be found in the user table");
         }
+    }
+
+    @DeleteMapping("/{userUUID}")
+    public ResponseEntity<Object> deleteUser(@PathVariable("userUUID") UUID userUUID) {
+        // Access the DB and delete the user
+        return ResponseHandler.responseBuilder("Deleted Specific User",
+                HttpStatus.OK,
+                userService.getSpecificUser(userUUID));
     }
 
 }
